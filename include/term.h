@@ -17,6 +17,14 @@
 #include "string.h"
 #include "video.h"
 
+typedef struct Line {
+    char *line; // Malloc buffer
+    size_t line_size;
+    size_t line_idx;
+    struct Line *prev;
+    struct Line *next;
+} Line;
+
 #define BUFF_SIZE 4096
 #define TRIM_SIZE 3
 #define TRIM      " $ "
